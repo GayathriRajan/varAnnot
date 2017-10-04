@@ -5,7 +5,7 @@ from collections import OrderedDict
 
 def get_clinvar_annot(data,chr,start,end):
     clin={'sig':'N/A'}
-    print chr,start,end
+    #print chr,start,end
     try:
         for record in data.fetch(chr,start,end):
             clin['sig']=''.join(str(e) for e in record.INFO['CLNSIG'])
