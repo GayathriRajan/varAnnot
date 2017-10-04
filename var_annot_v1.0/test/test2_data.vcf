@@ -1,0 +1,76 @@
+##fileformat=VCFv4.0
+##fileDate=2016-06-21
+##source=Platypus_Version_0.8.1
+##platypusOptions={'assemblyRegionSize': 1500, 'trimReadFlank': 0, 'assembleBadReads': 1, 'bamFiles': ['/data/test_data/tumor.bam'], 'minVarDist': 9, 'trimSoftClipped': 1, 'minReads': 2, 'qualBinSize': 1, 'refFile': '/data/ref_genome/human_g1k_v37.fasta', 'maxHaplotypes': 50, 'filterVarsByCoverage': 1, 'maxSize': 1500, 'originalMaxHaplotypes': 50, 'skipDifficultWindows': 0, 'parseNCBI': 0, 'skipRegionsFile': None, 'noCycles': 0, 'trimAdapter': 1, 'minPosterior': 5, 'assembleAll': 1, 'trimOverlapping': 1, 'filterDuplicates': 1, 'abThreshold': 0.001, 'minFlank': 10, 'bufferSize': 100000, 'fileCaching': 0, 'useEMLikelihoods': 0, 'coverageSamplingLevel': 30, 'calculateFlankScore': 0, 'logFileName': 'log.txt', 'nCPU': 1, 'filterReadsWithUnmappedMates': 1, 'qdThreshold': 10, 'maxVariants': 8, 'scThreshold': 0.95, 'filterReadsWithDistantMates': 1, 'maxReads': 5000000, 'badReadsWindow': 11, 'genIndels': 1, 'largeWindows': 0, 'minMapQual': 20, 'maxVarDist': 15, 'maxGOF': 30, 'rlen': 150, 'minGoodQualBases': 20, 'refCallBlockSize': 1000, 'countOnlyExactIndelMatches': 0, 'longHaps': 0, 'HLATyping': 0, 'filterReadPairsWithSmallInserts': 1, 'minBaseQual': 20, 'getVariantsFromBAMs': 1, 'genSNPs': 1, 'assemble': 0, 'assemblerKmerSize': 15, 'minVarFreq': 0.05, 'alignScoreFile': '', 'verbosity': 2, 'sourceFile': None, 'compressReads': 0, 'rmsmqThreshold': 40, 'filteredReadsFrac': 0.7, 'outputRefCalls': 0, 'badReadsThreshold': 15, 'hapScoreThreshold': 4, 'regions': None, 'sbThreshold': 0.001, 'output': '/data/test_data-A2/platypus_out.vcf', 'assembleBrokenPairs': 0, 'mergeClusteredVariants': 1, 'maxGenotypes': 1275, 'nInd': 1}
+##filter="MQ > 50 & TC > 100 & QUAL > 2900"
+##INFO=<ID=FR,Number=.,Type=Float,Description="Estimated population frequency of variant">
+##INFO=<ID=MMLQ,Number=1,Type=Float,Description="Median minimum base quality for bases around variant">
+##INFO=<ID=TCR,Number=1,Type=Integer,Description="Total reverse strand coverage at this locus">
+##INFO=<ID=HP,Number=1,Type=Integer,Description="Homopolymer run length around variant locus">
+##INFO=<ID=WE,Number=1,Type=Integer,Description="End position of calling window">
+##INFO=<ID=Source,Number=.,Type=String,Description="Was this variant suggested by Playtypus, Assembler, or from a VCF?">
+##INFO=<ID=FS,Number=.,Type=Float,Description="Fisher's exact test for strand bias (Phred scale)">
+##INFO=<ID=WS,Number=1,Type=Integer,Description="Starting position of calling window">
+##INFO=<ID=PP,Number=.,Type=Float,Description="Posterior probability (phred scaled) that this variant segregates">
+##INFO=<ID=TR,Number=.,Type=Integer,Description="Total number of reads containing this variant">
+##INFO=<ID=NF,Number=.,Type=Integer,Description="Total number of forward reads containing this variant">
+##INFO=<ID=TCF,Number=1,Type=Integer,Description="Total forward strand coverage at this locus">
+##INFO=<ID=NR,Number=.,Type=Integer,Description="Total number of reverse reads containing this variant">
+##INFO=<ID=TC,Number=1,Type=Integer,Description="Total coverage at this locus">
+##INFO=<ID=END,Number=.,Type=Integer,Description="End position of reference call block">
+##INFO=<ID=MGOF,Number=.,Type=Integer,Description="Worst goodness-of-fit value reported across all samples">
+##INFO=<ID=SbPval,Number=.,Type=Float,Description="Binomial P-value for strand bias test">
+##INFO=<ID=START,Number=.,Type=Integer,Description="Start position of reference call block">
+##INFO=<ID=ReadPosRankSum,Number=.,Type=Float,Description="Mann-Whitney Rank sum test for difference between in positions of variants in reads from ref and alt">
+##INFO=<ID=MQ,Number=.,Type=Float,Description="Root mean square of mapping qualities of reads at the variant position">
+##INFO=<ID=QD,Number=1,Type=Float,Description="Variant-quality/read-depth for this variant">
+##INFO=<ID=SC,Number=1,Type=String,Description="Genomic sequence 10 bases either side of variant position">
+##INFO=<ID=BRF,Number=1,Type=Float,Description="Fraction of reads around this variant that failed filters">
+##INFO=<ID=HapScore,Number=.,Type=Integer,Description="Haplotype score measuring the number of haplotypes the variant is segregating into in a window">
+##INFO=<ID=Size,Number=.,Type=Integer,Description="Size of reference call block">
+##FILTER=<ID=GOF,Description="Variant fails goodness-of-fit test.">
+##FILTER=<ID=badReads,Description="Variant supported only by reads with low quality bases close to variant position, and not present on both strands.">
+##FILTER=<ID=alleleBias,Description="Variant frequency is lower than expected for het">
+##FILTER=<ID=hp10,Description="Flanking sequence contains homopolymer of length 10 or greater">
+##FILTER=<ID=Q20,Description="Variant quality is below 20.">
+##FILTER=<ID=HapScore,Description="Too many haplotypes are supported by the data in this region.">
+##FILTER=<ID=MQ,Description="Root-mean-square mapping quality across calling region is low.">
+##FILTER=<ID=strandBias,Description="Variant fails strand-bias filter">
+##FILTER=<ID=SC,Description="Variants fail sequence-context filter. Surrounding sequence is low-complexity">
+##FILTER=<ID=QualDepth,Description="Variant quality/Read depth ratio is low.">
+##FILTER=<ID=REFCALL,Description="This line represents a homozygous reference call">
+##FILTER=<ID=QD,Description="Variants fail quality/depth filter.">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Unphased genotypes">
+##FORMAT=<ID=GQ,Number=.,Type=Integer,Description="Genotype quality as phred score">
+##FORMAT=<ID=GOF,Number=.,Type=Float,Description="Goodness of fit value">
+##FORMAT=<ID=NR,Number=.,Type=Integer,Description="Number of reads covering variant location in this sample">
+##FORMAT=<ID=GL,Number=.,Type=Float,Description="Genotype log10-likelihoods for AA,AB and BB genotypes, where A = ref and B = variant. Only applicable for bi-allelic sites">
+##FORMAT=<ID=NV,Number=.,Type=Integer,Description="Number of reads containing variant in this sample">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	sample
+1	1158631	.	A	G	2965	PASS	BRF=0.16;FR=1.0000;HP=1;HapScore=1;MGOF=3;MMLQ=33;MQ=59.75;NF=89;NR=67;PP=2965;QD=20;SC=CACTTTCCTCATCCACTTTGA;SbPval=0.58;Source=Platypus;TC=160;TCF=90;TCR=70;TR=156;WE=1158639;WS=1158621	GT:GL:GOF:GQ:NR:NV	1/1:-300.0,-43.88,0.0:3:99:160:156
+1	1167659	.	A	G	2965	PASS	BRF=0.16;FR=1.0000;HP=1;HapScore=1;MGOF=3;MMLQ=33;MQ=59.75;NF=89;NR=67;PP=2965;QD=20;SC=CACTTTCCTCATCCACTTTGA;SbPval=0.58;Source=Platypus;TC=160;TCF=90;TCR=70;TR=156;WE=1158639;WS=1158621	GT:GL:GOF:GQ:NR:NV	1/1:-300.0,-43.88,0.0:3:99:160:156
+1	1246004	.	A	G	2965	PASS	BRF=0.09;FR=1.0000;HP=6;HapScore=1;MGOF=5;MMLQ=32;MQ=59.5;NF=101;NR=47;PP=2965;QD=20;SC=ACAGGTACGTATTTTTCCAGG;SbPval=0.62;Source=Platypus;TC=152;TCF=101;TCR=51;TR=148;WE=1246012;WS=1245994	GT:GL:GOF:GQ:NR:NV	1/1:-300.0,-41.24,0.0:5:99:152:148
+1	1249187	.	G	A	2965	PASS	BRF=0.16;FR=1.0000;HP=3;HapScore=1;MGOF=3;MMLQ=34;MQ=59.72;NF=78;NR=57;PP=2965;QD=20;SC=TCCTCTGCACGAAAGTCTTGC;SbPval=0.53;Source=Platypus;TC=137;TCF=79;TCR=58;TR=135;WE=1249195;WS=1249177	GT:GL:GOF:GQ:NR:NV	1/1:-300.0,-37.63,0.0:3:99:137:135
+1	1261824	.	G	C	2965	PASS	BRF=0.15;FR=1.0000;HP=1;HapScore=1;MGOF=5;MMLQ=34;MQ=58.98;NF=14;NR=120;PP=2965;QD=20;SC=CAGATAGATGGCTAGGATGGT;SbPval=0.5;Source=Platypus;TC=136;TCF=14;TCR=122;TR=134;WE=1261832;WS=1261814	GT:GL:GOF:GQ:NR:NV	1/1:-300.0,-39.74,0.0:5:99:136:134
+1	1387667	.	C	G	2965	PASS	BRF=0.17;FR=1.0000;HP=2;HapScore=1;MGOF=3;MMLQ=31;MQ=59.42;NF=94;NR=39;PP=2965;QD=20;SC=CTGTGTCAAGCCCTCACCCTC;SbPval=0.64;Source=Platypus;TC=137;TCF=94;TCR=43;TR=133;WE=1387675;WS=1387657	GT:GL:GOF:GQ:NR:NV	1/1:-300.0,-39.41,0.0:3:99:137:133
+1	1585597	.	A	G	2962	PASS	BRF=0.17;FR=0.5000;HP=2;HapScore=2;MGOF=9;MMLQ=36;MQ=59.75;NF=42;NR=81;PP=2962;QD=20;SC=CCATTATACCATAATTTCTGG;SbPval=0.77;Source=Platypus;TC=264;TCF=105;TCR=159;TR=123;WE=1585605;WS=1585587	GT:GL:GOF:GQ:NR:NV	0/1:-300.0,0.0,-300.0:9:99:264:123
+1	1585642	.	G	T	2956	PASS	BRF=0.2;FR=0.5000;HP=1;HapScore=2;MGOF=12;MMLQ=37;MQ=59.84;NF=16;NR=80;PP=2956;QD=20;SC=CCTGATGACGGATACGAGCTA;SbPval=0.45;Source=Platypus;TC=196;TCF=31;TCR=165;TR=96;WE=1585650;WS=1585632	GT:GL:GOF:GQ:NR:NV	0/1:-299.71,0.0,-300.0:12:99:196:96
+1	1586752	.	T	C	2965	PASS	BRF=0.22;FR=1.0000;HP=2;HapScore=1;MGOF=3;MMLQ=37;MQ=57.95;NF=155;NR=31;PP=2965;QD=20;SC=GTTGTCACAGTGACCCTAGGA;SbPval=0.62;Source=Platypus;TC=189;TCF=155;TCR=34;TR=186;WE=1586760;WS=1586742	GT:GL:GOF:GQ:NR:NV	1/1:-300.0,-53.58,0.0:3:99:189:186
+1	1647686	.	A	C	2962	PASS	BRF=0.26;FR=0.5000;HP=1;HapScore=1;MGOF=49;MMLQ=38;MQ=51.06;NF=131;NR=0;PP=2962;QD=20;SC=CACTTCTGCAACAAATGTGAC;SbPval=1.0;Source=Platypus;TC=178;TCF=178;TCR=0;TR=131;WE=1647697;WS=1647676	GT:GL:GOF:GQ:NR:NV	0/1:-299.7,0.0,-2.05:49:21:178:131
+1	1647722	.	GCTGTGACA	TCTAGGATG	2914	alleleBias	BRF=0.27;FR=0.5000;HP=2;HapScore=1;MGOF=36;MMLQ=36;MQ=52.53;NF=60;NR=0;PP=2914;QD=20;SC=CTTCTTCATTGCTGTGACAGG;SbPval=1.0;Source=Platypus;TC=259;TCF=246;TCR=13;TR=60;WE=1647738;WS=1647712	GT:GL:GOF:GQ:NR:NV	0/1:-300.0,0.0,-300.0:36:99:259:60
+1	1647745	.	GGCCCTTTC	AGCCCTTTT	2944	alleleBias	BRF=0.28;FR=0.5000;HP=1;HapScore=1;MGOF=38;MMLQ=38;MQ=51.94;NF=71;NR=3;PP=2944;QD=20;SC=ACACTACCACGGCCCTTTCAT;SbPval=0.99;Source=Platypus;TC=305;TCF=263;TCR=42;TR=74;WE=1647761;WS=1647735	GT:GL:GOF:GQ:NR:NV	1/0:-300.0,0.0,-300.0:38:99:305:74
+1	1647778	.	C	G	2962	PASS	BRF=0.28;FR=0.5000;HP=2;HapScore=1;MGOF=31;MMLQ=35;MQ=50.01;NF=118;NR=36;PP=2962;QD=20;SC=TGACCCAGCCCACTCACCTTT;SbPval=0.85;Source=Platypus;TC=485;TCF=342;TCR=143;TR=154;WE=1647786;WS=1647768	GT:GL:GOF:GQ:NR:NV	0/1:-300.0,0.0,-300.0:31:99:485:154
+1	1647893	.	C	CTTTCTT	2970	alleleBias	BRF=0.25;FR=0.5000;HP=4;HapScore=1;MGOF=21;MMLQ=35;MQ=51.94;NF=0;NR=60;PP=2970;QD=20;SC=TTCGTGCTCTCTTTCTTTCAC;SbPval=1.0;Source=Platypus;TC=379;TCF=38;TCR=341;TR=60;WE=1647901;WS=1647883	GT:GL:GOF:GQ:NR:NV	0/1:-300.0,0.0,-300.0:20:99:379:60
+1	1647968	.	C	CAT	2954	PASS	BRF=0.23;FR=0.5000;HP=1;HapScore=1;MGOF=32;MMLQ=35;MQ=51.2;NF=0;NR=51;PP=2954;QD=20;SC=AAAAATTTCACGAGGCCGGGC;SbPval=1.0;Source=Platypus;TC=175;TCF=7;TCR=168;TR=51;WE=1648010;WS=1647958	GT:GL:GOF:GQ:NR:NV	1/0:-243.79,0.0,-298.49:32:99:175:51
+1	1647971	.	G	A	2962	PASS	BRF=0.23;FR=0.5000;HP=1;HapScore=1;MGOF=32;MMLQ=35;MQ=51.64;NF=0;NR=47;PP=2962;QD=20;SC=AATTTCACGAGGCCGGGCACG;SbPval=1.0;Source=Platypus;TC=162;TCF=8;TCR=154;TR=47;WE=1648010;WS=1647958	GT:GL:GOF:GQ:NR:NV	1/0:-179.0,0.0,-298.49:32:99:162:47
+1	1647983	.	TGGCTTAC	AGGCTTAT	2944	PASS	BRF=0.23;FR=0.5000;HP=4;HapScore=1;MGOF=32;MMLQ=37;MQ=50.94;NF=0;NR=37;PP=2944;QD=20;SC=CCGGGCACGGTGGCTTACGCC;SbPval=1.0;Source=Platypus;TC=131;TCF=5;TCR=126;TR=37;WE=1648010;WS=1647958	GT:GL:GOF:GQ:NR:NV	1/0:-291.97,0.0,-298.49:32:99:131:37
+1	1650787	.	TGATGCCTACATTTT	CGATGCCTACGTTTC	2934	PASS	BRF=0.17;FR=0.5000;HP=1;HapScore=1;MGOF=19;MMLQ=35;MQ=53.41;NF=67;NR=32;PP=2934;QD=20;SC=TGAATGGCTATGATGCCTACA;SbPval=0.78;Source=Platypus;TC=281;TCF=173;TCR=108;TR=99;WE=1650815;WS=1650777	GT:GL:GOF:GQ:NR:NV	1/0:-299.7,0.0,-299.7:19:99:281:99
+1	1650807	.	T	C	2962	PASS	BRF=0.17;FR=0.5000;HP=3;HapScore=1;MGOF=19;MMLQ=37;MQ=53.39;NF=89;NR=76;PP=2962;QD=20;SC=ATTTTTCTTTTCTCTTTTCAT;SbPval=0.39;Source=Platypus;TC=303;TCF=173;TCR=130;TR=165;WE=1650815;WS=1650777	GT:GL:GOF:GQ:NR:NV	0/1:-299.35,0.0,-299.35:19:99:303:165
+1	1650832	.	A	G	2962	PASS	BRF=0.19;FR=0.5000;HP=1;HapScore=4;MGOF=35;MMLQ=36;MQ=53.31;NF=86;NR=65;PP=2962;QD=20;SC=TCTGTGATGAACTTTTTCTTT;SbPval=0.71;Source=Platypus;TC=314;TCF=167;TCR=147;TR=151;WE=1650853;WS=1650822	GT:GL:GOF:GQ:NR:NV	0/1:-299.7,0.0,-299.7:35:99:314:151
+1	1650845	.	G	A	2962	PASS	BRF=0.19;FR=0.5000;HP=2;HapScore=4;MGOF=35;MMLQ=36;MQ=53.44;NF=77;NR=83;PP=2962;QD=20;SC=TTTTCTTTCCGAGACATTTGC;SbPval=0.43;Source=Platypus;TC=320;TCF=163;TCR=157;TR=160;WE=1650853;WS=1650822	GT:GL:GOF:GQ:NR:NV	1/0:-299.7,0.0,-299.7:35:99:320:160
+1	1885055	.	C	T	2965	PASS	BRF=0.12;FR=1.0000;HP=2;HapScore=1;MGOF=3;MMLQ=35;MQ=59.61;NF=72;NR=33;PP=2965;QD=20;SC=ATTTTTGACACGGACAACGAA;SbPval=0.53;Source=Platypus;TC=105;TCF=72;TCR=33;TR=105;WE=1885063;WS=1885045	GT:GL:GOF:GQ:NR:NV	1/1:-300.0,-29.5,0.0:3:99:105:105
+1	1895177	.	C	T	2965	PASS	BRF=0.19;FR=1.0000;HP=1;HapScore=1;MGOF=2;MMLQ=34;MQ=59.65;NF=91;NR=16;PP=2965;QD=20;SC=CTGTCTGAGCCGTCCTCTTAC;SbPval=0.58;Source=Platypus;TC=108;TCF=91;TCR=17;TR=107;WE=1895185;WS=1895167	GT:GL:GOF:GQ:NR:NV	1/1:-300.0,-29.5,0.0:2:99:108:107
+1	1900106	.	T	TCTC	2969	PASS	BRF=0.21;FR=1.0000;HP=1;HapScore=1;MGOF=9;MMLQ=35;MQ=53.97;NF=109;NR=14;PP=2969;QD=20;SC=ACTGTGGTCTTCTTGCAAAAG;SbPval=0.78;Source=Platypus;TC=147;TCF=126;TCR=21;TR=123;WE=1900114;WS=1900096	GT:GL:GOF:GQ:NR:NV	1/1:-300.0,-42.14,0.0:9:99:147:123
+1	1900232	.	T	C	2965	PASS	BRF=0.18;FR=1.0000;HP=1;HapScore=1;MGOF=2;MMLQ=34;MQ=55.14;NF=96;NR=149;PP=2965;QD=20;SC=ATCCGACTGATGATCTCCTGC;SbPval=0.5;Source=Platypus;TC=247;TCF=96;TCR=151;TR=245;WE=1900240;WS=1900222	GT:GL:GOF:GQ:NR:NV	1/1:-300.0,-68.63,0.0:2:99:247:245
+1	1909843	.	C	T	2965	PASS	BRF=0.24;FR=1.0000;HP=2;HapScore=1;MGOF=3;MMLQ=33;MQ=57.83;NF=115;NR=85;PP=2965;QD=20;SC=AGCAGGGCAGCGTGTCTCAGC;SbPval=0.6;Source=Platypus;TC=212;TCF=119;TCR=93;TR=200;WE=1909876;WS=1909833	GT:GL:GOF:GQ:NR:NV	1/1:-298.8,-56.57,0.0:3:99:212:200
+1	1909854	.	G	A	2965	PASS	BRF=0.24;FR=1.0000;HP=3;HapScore=1;MGOF=3;MMLQ=31;MQ=57.93;NF=111;NR=99;PP=2965;QD=20;SC=GTGTCTCAGCGGGGATGGGTG;SbPval=0.64;Source=Platypus;TC=220;TCF=112;TCR=108;TR=210;WE=1909876;WS=1909833	GT:GL:GOF:GQ:NR:NV	1/1:-298.8,-60.7,0.0:3:99:220:210
