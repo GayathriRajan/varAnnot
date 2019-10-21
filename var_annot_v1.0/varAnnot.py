@@ -1,4 +1,4 @@
-import requests,vcf,os,re
+import requests,vcf,os,re,argparse
 from operator import itemgetter
 from optparse import OptionParser
 from collections import OrderedDict
@@ -132,32 +132,32 @@ def get_var_ID(var,name):
 
 def main():
 
-    parser = OptionParser(usage="usage: %prog [options]",
+    parser = argparse.ArgumentParser(usage="usage: %prog [options]",
                           version="%prog v1.0")
-    parser.add_option("-i", "--inputVCF",
+    parser.add_argument("-i", "--inputVCF",
                       dest="infile",
                       action="store",
                       help="input VCF file")
     
-    parser.add_option("-c", "--clinvar",
+    parser.add_argument("-c", "--clinvar",
                       dest="clinfile",
                       action="store",
                       help="clinvar VCF file")
 
-    parser.add_option("-s", "--sample-name",
+    parser.add_argument("-s", "--sample-name",
                       dest="samname",
                       action="store",
                       help="Sample names to analyze")
-    (options, args) = parser.parse_args()
+    args = parser.parse_args()
 
-    vcfData = vcf.Reader(open(options.infile),'r')
-    clinData = vcf.Reader(open(options.clinfile,'rb'))
+    vcfData = vcf.Reader(open(args.infile),'r')
+    clinData = vcf.Reader(open(args.clinfile,'rb'))
     chr = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','X','Y','MT']
     samname = vcfData.samples
     if len(samname) == 1:
         samname = samname[0]
 
-    indir = os.path.dirname(os.path.abspath(options.infile))
+    indir = os.path.dirname(os.path.abspath(args.infile))
     outfile = os.path.join(indir,samname+'_annotated.txt')
     
     try:
